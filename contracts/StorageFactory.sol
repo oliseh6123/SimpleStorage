@@ -17,13 +17,11 @@ contract StorageFactory {
     }
 
     function sfStore(uint256 _simpleStorageIndex, uint256 _newSimpleStorageNumber) public {
-        SimpleStorage mySimpleStorage = listOfSimpleStorageContract[_simpleStorageIndex];
-        mySimpleStorage.store(_newSimpleStorageNumber);
+        listOfSimpleStorageContract[_simpleStorageIndex].store(_newSimpleStorageNumber);
     }
 
     function sfGet(uint256 _simpleStorageIndex) public view returns (uint256){
-        SimpleStorage mySimpleStorage = listOfSimpleStorageContract[_simpleStorageIndex];
-        return mySimpleStorage.retrieve();
+        return listOfSimpleStorageContract[_simpleStorageIndex].retrieve();
     }
 
 }
